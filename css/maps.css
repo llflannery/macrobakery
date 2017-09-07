@@ -1,0 +1,1 @@
+.map_container{position:relative}.map_thumb{position:absolute;top:10px;left:10px;width:200px;height:200px;box-shadow:0 0 5px rgba(0,0,0,0.5)}@media screen and (max-width: 600px){.map_thumb{position:relative;top:0;left:0;width:100%}}

@@ -1,0 +1,18 @@
+<!-- listicle -->
+<!-- add css -->
+{% macro stylesheet() -%}
+<link rel="stylesheet" type="text/css" href="../css/listicle.css">
+<script type="text/javascript" src="../templates/listicle.js"></script>
+{%- endmacro %}
+<!-- listicle header -->
+{% macro header(text) -%}
+<h3 class="listicle_header">{{text}}</h3>
+{%- endmacro %}
+<!-- listicle subhead -->
+{% macro subhed(text) -%}
+<h3 class="listicle_subhead">{{text}}</h3>
+{%- endmacro %}
+<!-- a ruler, if you want it -->
+{% macro ruler() -%}
+<div class="listicle_ruler"></div>
+{%- endmacro %}

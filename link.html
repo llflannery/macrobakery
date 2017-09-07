@@ -1,0 +1,2 @@
+<!-- links -->
+{% macro link(url, text, target="_blank") -%}<a href="{{url}}" target="{{target}}">{% if text -%}{{text}}{% else %}{{url}}{% endif -%}</a>{%- endmacro %}

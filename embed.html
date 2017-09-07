@@ -1,0 +1,69 @@
+<!-- inline photos -->
+{% macro stylesheet() -%}
+<link rel="stylesheet" type="text/css" href="http://www.tampabay.com/specials/2015/graphics/macros/css/base.css">
+{%- endmacro %}
+{% macro img(src, description='', col='12', url, caption, credit, fullwidth) -%}
+<div class="image_macro col_{{col}}">
+	{% if url -%}<a href="{{url}}" target="_blank">{%- endif %}<img class="inline_img{% if fullwidth -%} no_fw{%- endif %}" src="{{src}}" alt="{{description}}" draggable="false">{% if url -%}</a>{%- endif %}
+	{% if credit -%}
+	<p class="inline_credit">{{credit}}</p>
+	{%- endif %}
+	{% if caption -%}
+	<p class="inline_caption">{{caption}}</p>
+	{%- endif %}
+</div>
+{%- endmacro %}
+<!-- full width image -->
+{% macro full_width_img(src, description='', url, caption, credit) -%}
+<div class="image_macro col_12">
+	{% if url -%}<a href="{{url}}" target="_blank">{%- endif %}<img class="inline_img" src="{{src}}" alt="{{description}}" draggable="false">{% if url -%}</a>{%- endif %}
+	{% if credit -%}
+	<p class="inline_credit">{{credit}}</p>
+	{%- endif %}
+	{% if caption -%}
+	<p class="inline_caption">{{caption}}</p>
+	{%- endif %}
+</div>
+{%- endmacro %}
+<!-- half width image -->
+{% macro half_width_img(src, description='', url, caption, credit) -%}
+<div class="image_macro col_4">
+	{% if url %}<a href="{{url}}" target="_blank">{% endif %}<img class="inline_img" src="{{src}}" alt="{{description}}" draggable="false">{% if url %}</a>{% endif %}
+	{% if credit -%}
+	<p class="inline_credit">{{credit}}</p>
+	{%- endif %}
+	{% if caption -%}
+	<p class="inline_caption">{{caption}}</p>
+	{%- endif %}
+</div>
+{%- endmacro %}
+<!-- side by side photos -->
+{% macro double_img(left_src, left_description='', left_url, left_caption, left_credit, right_src, right_description='', right_url, right_caption, right_credit) -%}
+<div class="image_macro col_4">
+	{% if left_url %}<a href="{{left_url}}" target="_blank">{% endif %}<img class="inline_img" src="{{left_src}}" alt="{{left_description}}" draggable="false">{% if left_url %}</a>{% endif %}
+	{% if left_credit -%}
+	<p class="inline_credit">{{left_credit}}</p>
+	{%- endif %}
+	{% if left_caption -%}
+	<p class="inline_caption">{{left_caption}}</p>
+	{%- endif %}
+</div>
+<div class="image_macro col_4 last">
+	{% if right_url %}<a href="{{right_url}}" target="_blank">{% endif %}<img class="inline_img" src="{{right_src}}" alt="{{right_description}}" draggable="false">{% if right_url %}</a>{% endif %}
+	{% if right_credit -%}
+	<p class="inline_credit">{{right_credit}}</p>
+	{%- endif %}
+	{% if right_caption -%}
+	<p class="inline_caption">{{right_caption}}</p>
+	{%- endif %}
+</div>
+{%- endmacro %}
+<!-- embed a tweet -->
+{% macro tweet(url) -%}
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"></p><a href="{{url}}"></a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{%- endmacro %}
+<!-- hard break -->
+{% macro break() -%}
+<div class="clear_break"></div>
+{%- endmacro %}

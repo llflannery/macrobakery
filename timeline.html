@@ -1,0 +1,22 @@
+<!-- timelines -->
+<!-- ad css -->
+{% macro stylesheet() -%}
+<link rel="stylesheet" type="text/css" href="http://www.tampabay.com/specials/2015/graphics/alex_test/css/timeline.css">
+<script type="text/javascript" src="http://www.tampabay.com/specials/2015/graphics/alex_test/templates/timeline.js"></script>
+{%- endmacro %}
+<!-- if you're making a timeline, use this to show time progression
+	The number is how many units. You can decide the magnitude of your
+	units. Whether that's days or months or years. Each unit is 10px high -->
+{% macro spacer(unit) -%}
+<div class="col_12" style="margin:20px 0;">
+	{% for i in range(0,unit) -%}
+	<div class="timeline_spacer"></div>
+	{%- endfor %}
+</div>
+{%- endmacro %}
+<!-- timeline unit header -->
+{% macro unit(text) -%}
+<div class="col_12 timeline_unit">
+	<p>{{text}}</p>
+</div>
+{%- endmacro %}

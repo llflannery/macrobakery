@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>Macro Bakery: A rendering service for macro templates used by the Tampa Bay Times</title>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Bevan%7CFrancois+One&subset=latin,latin">
+	<link type="text/css" href="http://www.tampabay.com/iwov-resources/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/bakery.css">
+	<link rel="stylesheet" type="text/css" href="../css/base.css">
+	<link rel="stylesheet" type="text/css" href="../css/listicle.css">
+	<link rel="stylesheet" type="text/css" href="../css/timeline.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+	<div class="masthead">
+		<a href="http://www.tampabay.com"><img class="logo" src="http://www.tampabay.com/specials/2014/graphics/tampabaytimes-white.png" alt="" draggable="false"/></a>
+	</div>
+	<div class="container">
+		<h1>Macro Bakery <small>a template rendering service</small></h1>
+
+		<form>
+
+<!-- All the Buttons -->
+		<div id="allButtons">
+			<h4>Embeds</h4> <a class="youtube" href="http://embedresponsively.com/" target="_blank">Need to embed YouTube or Instagram? Click me!</a>
+			<button type="button" class="link links"> Link</button> <!--Link -->
+			<button type="button" class="link fwpic"> Full Width Photo</button> <!--FW Photo -->
+			<button type="button" class="link hwpic"> Half Width Photo</button> <!--HW Photo -->
+			<button type="button" class="link sbspic"> Side By Side Photo</button> <!-- SBS photo -->
+			<button type="button" class="link google"> Google Form</button> <!--Google Form -->
+			<button type="button" class="link twitter"> Twitter</button> <!--Twitter -->
+			<button type="button" class="link push"> Push Alert</button> <!--Push Alert -->
+			<button type="button" id="hardBreak"> Hard Break</button> <!--Hard Break -->
+		<h4 class="head">Listicles</h4>
+		<h4 class="head">Timeline</h4>
+		<div class="headButtons">
+			<button type="button" class="link header"> Header</button> <!--Header -->
+			<button type="button" class="link subhead"> Sub Head</button> <!--Sub head -->
+			<button type="button" id="ruler"> Ruler</button> <!--ruler -->
+		</div>
+		<div class="headButtons">
+			<button type="button" class="link spacer"> Spacer</button> <!--Spacer -->
+			<button type="button" class="link unit"> Unit</button> <!--Unit -->
+			<button type="button" class="link entry"> Timeline Entry</button> <!--entry -->
+		</div>
+
+		</div>
+
+
+	<!-- All the inputs -->
+
+			<div class="inputs links">
+						Enter text here:
+  					<input type="text" class="border" placeholder="INTRO WORDS" id="linkIntro">: <input type="text" placeholder="Rest of link text" class="border" id="linkText"><br>
+						Enter URL here:
+	  				<input type="text"  class="border" id="urlText">
+					<button type="button" id="doneLink" class="doneButton">Done</button>
+			</div>
+
+
+			<div class="inputs fwpic">
+							Enter URL of picture here:
+	  					<input type="text" class="border" id="photoUrl"><br>
+							<strong>OR</strong>, did you upload a photo to the blog uploader this month? Enter the slug:
+	  					<input type="text" class="border" id="photoUrl2"><br>
+							Enter caption here:
+							<input type="text" class="border" id="photoCaption"><br>
+							Enter credit line here:
+							<input type="text" class="border" id="photoCredit"><br>
+							If photo is linked, enter URL here:
+							<input type="text" class="border" id="photoLinked">
+					<button type="button" id="doneFWphoto" class="doneButton">Done</button>
+			</div>
+
+
+			<div class="inputs hwpic">
+							Enter URL of picture here:
+							<input type="text" class="border" id="hwphotoUrl"><br>
+							<strong>OR</strong>, did you upload a photo to the blog uploader this month? Enter the slug:
+	  					<input type="text" class="border" id="hwphotoUrl2"><br>
+							Enter caption here:
+							<input type="text" class="border" id="hwphotoCaption"><br>
+							Enter credit line here:
+							<input type="text" class="border" id="hwphotoCredit"><br>
+							If photo is linked, enter URL here:
+							<input type="text" class="border" id="hwphotoLinked">
+					<button type="button" id="doneHWphoto" class="doneButton">Done</button>
+			</div>
+
+			<div class="inputs sbspic">
+					<div class="lefties">
+							Enter URL of left picture here:
+							<input type="text" class="border" id="sbsLeftphotoUrl"><br>
+							<strong>OR</strong> Enter the slug:
+	  					<input type="text" class="border" id="sbsLeftphotoUrl2"><br>
+							Enter left caption here:
+							<input type="text" class="border" id="sbsLeftphotoCaption"><br>
+							Enter left credit line here:
+							<input type="text" class="border" id="sbsLeftphotoCredit"><br>
+							If left photo is linked, enter URL here:
+							<input type="text" class="border" id="sbsLeftphotoLinked"><br>
+						</div>
+						<div class="righties">
+								Enter right URL of picture here:
+								<input type="text" class="border" id="sbsRightphotoUrl"><br>
+								<strong>OR</strong> Enter the slug:
+								<input type="text" class="border" id="sbsRightphotoUrl2"><br>
+								Enter right caption here:
+								<input type="text" class="border" id="sbsRightphotoCaption"><br>
+								Enter right credit line here:
+								<input type="text" class="border" id="sbsRightphotoCredit"><br>
+								If right photo is linked, enter URL here:
+								<input type="text" class="border" id="sbsRightphotoLinked"><br>
+							</div>
+				<button type="button" id="doneSBSphoto" class="doneButton">Done</button>
+			</div>
+
+			<div class="inputs google">
+							Enter Google Form URL:
+	  					<input type="text" class="border" id="gfUrl">
+					<button type="button"  id="doneGoogleform" class="doneButton">Done</button>
+			</div>
+
+			<div class="inputs twitter">
+							Enter tweet URL:
+	  					<input type="text" class="border" id="twitterUrl">
+					<button type="button" id="doneTwitter" class="doneButton">Done</button>
+			</div>
+
+			<div class="inputs push">
+						Enter text for your push alert here:
+						<input type="text" class="border" id="linkPush"><br>
+						Enter URL here:
+						<input type="text"  class="border" id="urlPush">
+					<button type="button" id="donePush" class="doneButton">Done</button>
+			</div>
+
+			<div class="inputs header">
+						Enter header text here:
+  					<input type="text" class="border" id="headerText"><br>
+					<button type="button" id="doneHeader" class="doneButton">Done</button>
+			</div>
+
+			<div class="inputs subhead">
+						Enter subhead text here:
+  					<input type="text" class="border" id="subheadText"><br>
+					<button type="button" id="doneSubhead" class="doneButton">Done</button>
+			</div>
+
+			<div class="inputs spacer">
+						How many units long is the spacer?:
+						<input type="text" class="border" id="spacerText"><br>
+					<button type="button" id="doneSpacer" class="doneButton">Done</button>
+			</div>
+
+			<div class="inputs unit">
+						Timeline Text:
+						<input type="text" class="border" id="unitText"><br>
+					<button type="button" id="doneUnit" class="doneButton">Done</button>
+			</div>
+
+			<div class="inputs entry">
+						Headline Text:
+						<input type="text" class="border" id="entryHeadline"><br>
+						Photo URL:
+						<input type="text" class="border" id="entryPhoto"><br>
+						<strong>OR</strong>, did you upload a photo to the blog uploader this month? Enter the slug:
+						<input type="text" class="border" id="entryPhoto2"><br>
+						Blurb text:
+						<input type="text" class="border" id="entryBlurb"><br>
+						Link to story:
+						<input type="text" class="border" id="entryStory"><br>
+					<button type="button" id="doneEntry" class="doneButton">Done</button>
+			</div>
+		</form>
+
+
+<!-- Output Screens -->
+		<h4 class="output">Output</h4>
+		<textarea readonly="readonly" id="macro-result" placeholder="Your HTML will appear here." rows="10"></textarea>
+
+		<h4>Preview</h4>
+		<div class="preview-container">
+			<div class="preview-pane">
+				<div class="preview-show col_8"></div>
+			</div>
+		</div>
+
+
+	</div>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://www.tampabay.com/iwov-resources/scripts/specials/nunjucks.min.js"></script>
+	<script type="text/javascript" src="../js/bakery.js"></script>
+</body>
+</html>

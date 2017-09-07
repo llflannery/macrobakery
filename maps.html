@@ -1,0 +1,23 @@
+<!-- maps -->
+<!-- add css -->
+{% macro maps() %}
+<link rel="stylesheet" type="text/css" href="http://www.tampabay.com/iwov-resources/specials/macros/maps.css">
+<script type="text/javascript" src="templates/maps.js"></script>
+{% endmacro %}
+<!-- locator map on image -->
+{% macro img_map(src, description='', url, caption, credit, fullwidth, place, position='bottom') %}
+<div class="col_12">
+	<div class="map_container">
+		{% if url %}<a href="{{url}}" target="_blank">{% endif %}<img class="inline_img{% if fullwidth %} no_fw{% endif %}" src="{{src}}" alt="{{description}}" draggable="false">{% if url %}</a>{% endif %}
+		{% if place %}
+		<iframe class="map_thumb" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBpXSzXNOtY6RF4j1iOiZIbJEUxzzfSCAU&q={{place}}&maptype=satellite"></iframe>
+		{% endif %}
+	</div>
+	{% if credit %}
+	<p class="inline_credit">{{credit}}</p>
+	{% endif %}
+	{% if caption %}
+	<p class="inline_caption">{{caption}}</p>
+	{% endif %}
+</div>
+{% endmacro %}
